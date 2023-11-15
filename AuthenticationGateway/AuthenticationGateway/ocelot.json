@@ -1,31 +1,90 @@
 {
+  //"Routes": [
+  //  //{
+  //  //  "DownstreamPathTemplate": "/todos/{id}",
+  //  //  "DownstreamScheme": "https",
+  //  //  "DownstreamHostAndPorts": [
+  //  //    {
+  //  //      "Host": "jsonplaceholder.typicode.com",
+  //  //      "Port": 443
+  //  //    }
+  //  //  ],
+  //  //  "UpstreamPathTemplate": "/todos/{id}",
+  //  //  "UpstreamHttpMethod": [ "Get" ]
+  //  //},
+  //  {
+  //    "UpstreamPathTemplate": "/test",
+  //    "DownstreamPathTemplate": "/test",
+  //    "DownstreamScheme": "http",
+  //    "DownstreamHostAndPorts": [
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 8124
+  //      }
+  //    ]
+  //  },
+  //  {
+  //    "UpstreamPathTemplate": "/registerws",
+  //    "DownstreamPathTemplate": "/registerws",
+  //    "DownstreamScheme": "http",
+  //    "DownstreamHostAndPorts": [
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 8124
+  //      }
+  //    ]
+  //  },
+  //  {
+  //    "UpstreamPathTemplate": "/topic/chat",
+  //    "DownstreamPathTemplate": "/topic/chat",
+  //    "DownstreamScheme": "ws",
+  //    "DownstreamHostAndPorts": [
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 8124
+  //      }
+  //    ]
+  //  }
+  //],
   "Routes": [
-    //{
-    //  "DownstreamPathTemplate": "/todos/{id}",
-    //  "DownstreamScheme": "https",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "jsonplaceholder.typicode.com",
-    //      "Port": 443
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/todos/{id}",
-    //  "UpstreamHttpMethod": [ "Get" ]
-    //},
     {
-      "UpstreamPathTemplate": "/",
-      "DownstreamPathTemplate": "/test",
+      "DownstreamPathTemplate": "/registerws",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/registerws",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/topic/chat",
       "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 8124
         }
-      ]
+      ],
+      "UpstreamPathTemplate": "/topic/chat",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/app/chat",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/app/chat",
+      "UpstreamHttpMethod": [ "POST" ]
     }
-
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5000"
+    "BaseUrl": "http://localhost:5000"
   }
 }
