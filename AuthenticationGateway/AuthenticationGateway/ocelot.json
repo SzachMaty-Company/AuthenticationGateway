@@ -60,6 +60,18 @@
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
+      "DownstreamPathTemplate": "/registerws/info",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/registerws/info",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
       "DownstreamPathTemplate": "/topic/chat",
       "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
@@ -85,6 +97,10 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "BaseUrl": "http://localhost:5000",
+    "WebSocketOptions": {
+      "KeepAliveInterval": 20,
+      "AllowedOrigins": [ "*" ] // Zmodyfikuj na zgodnie z wymaganiami bezpieczeństwa
+    }
   }
 }
