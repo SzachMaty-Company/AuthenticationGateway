@@ -105,7 +105,23 @@
         }
       ],
       "UpstreamPathTemplate": "/auth/google",
-      "UpstreamHttpMethod": ["GET"]
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/protected",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5001"
+        }
+      ],
+      "UpstreamPathTemplate": "/protected",
+      "UpstreamHttpMethod": [ "GET" ]
     }
   ],
   "GlobalConfiguration": {
