@@ -112,7 +112,7 @@
         "AuthenticationProviderKey": "JwtBearer",
         "AllowedScopes": []
       },
-      "DownstreamPathTemplate": "/protected",
+      "DownstreamPathTemplate": "/auth/protected",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
