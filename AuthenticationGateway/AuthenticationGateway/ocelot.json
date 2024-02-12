@@ -101,7 +101,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/auth/google",
@@ -117,7 +117,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/protected",
