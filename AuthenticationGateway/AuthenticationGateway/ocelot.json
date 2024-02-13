@@ -52,8 +52,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8124
+          "Host": "chatservice",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/registerws",
@@ -64,8 +64,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8124
+          "Host": "chatservice",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/registerws/info",
@@ -76,8 +76,8 @@
       "DownstreamScheme": "ws",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8124
+          "Host": "chatservice",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/topic/chat",
@@ -88,8 +88,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8124
+          "Host": "chatservice",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/app/chat",
@@ -100,8 +100,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "user_data_service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/auth/google",
@@ -116,8 +116,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "user_data_service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/protected",
@@ -125,7 +125,7 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000",
+    "BaseUrl": "http://gateway:80",
     "WebSocketOptions": {
       "KeepAliveInterval": 20,
       "AllowedOrigins": [ "*" ] // Zmodyfikuj na zgodnie z wymaganiami bezpieczeństwa

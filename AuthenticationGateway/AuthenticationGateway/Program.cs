@@ -46,7 +46,7 @@ builder.Logging.AddConsole();
 //builder.WebHost.UseIISIntegration();
 
 
-//Application pipeline
+//Application pipelines
 var app = builder.Build();
 
 app.UseCors("all");
