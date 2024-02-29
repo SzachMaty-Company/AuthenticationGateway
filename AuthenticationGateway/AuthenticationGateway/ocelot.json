@@ -49,14 +49,39 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/registerws",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/registerws",
+      "UpstreamScheme": "ws",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/chat/{rest}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "chatservice",
-          "Port": 8080
+          "Port": 8124
         }
       ],
-      "UpstreamPathTemplate": "/registerws",
+      "UpstreamPathTemplate": "/chat/{rest}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/user/{rest}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{rest}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -65,36 +90,13 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "chatservice",
-          "Port": 8080
+          "Port": 8124
         }
       ],
       "UpstreamPathTemplate": "/registerws/info",
       "UpstreamHttpMethod": [ "GET" ]
     },
-    {
-      "DownstreamPathTemplate": "/topic/chat",
-      "DownstreamScheme": "ws",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "chatservice",
-          "Port": 8080
-        }
-      ],
-      "UpstreamPathTemplate": "/topic/chat",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/app/chat",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "chatservice",
-          "Port": 8080
-        }
-      ],
-      "UpstreamPathTemplate": "/app/chat",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
+
     {
       "DownstreamPathTemplate": "/auth/google",
       "DownstreamScheme": "http",
