@@ -96,6 +96,18 @@
       "UpstreamPathTemplate": "/registerws/info",
       "UpstreamHttpMethod": [ "GET" ]
     },
+    {
+      "DownstreamPathTemplate": "/swagger-ui/{rest}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger-ui/{rest}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
 
     {
       "DownstreamPathTemplate": "/auth/google",
