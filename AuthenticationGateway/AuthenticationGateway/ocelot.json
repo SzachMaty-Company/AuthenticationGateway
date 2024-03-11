@@ -110,6 +110,33 @@
     },
 
     {
+      "DownstreamPathTemplate": "/game-handshake",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-handshake",
+      "UpstreamScheme": "ws",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/game-init",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-init",
+      "UpstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
       "DownstreamPathTemplate": "/auth/google",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
