@@ -201,6 +201,22 @@
         "AuthenticationProviderKey": "JwtBearer",
         "AllowedScopes": []
       },
+      "DownstreamPathTemplate": "/friend",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
       "DownstreamPathTemplate": "/friend/request",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
