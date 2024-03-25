@@ -193,7 +193,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/user/{email}",
+      "UpstreamPathTemplate": "/search/{email}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
