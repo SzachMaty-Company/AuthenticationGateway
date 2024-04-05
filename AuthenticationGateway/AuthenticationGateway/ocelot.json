@@ -177,6 +177,102 @@
       ],
       "UpstreamPathTemplate": "/protected",
       "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/user/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/search/{email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/request",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/request",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/{userId}/send",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/{userId}/send",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/{userId}/accept",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/{userId}/accept",
+      "UpstreamHttpMethod": [ "POST" ]
     }
   ],
   "GlobalConfiguration": {
