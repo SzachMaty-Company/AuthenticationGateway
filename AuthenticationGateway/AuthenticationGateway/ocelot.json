@@ -137,6 +137,20 @@
     },
 
     {
+      "DownstreamPathTemplate": "/game-info/{gameCode}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-info/{gameCode}",
+      "UpstreamScheme": "http",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
       "DownstreamPathTemplate": "/auth/google",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
