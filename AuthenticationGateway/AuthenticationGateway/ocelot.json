@@ -1,51 +1,4 @@
 {
-  //"Routes": [
-  //  //{
-  //  //  "DownstreamPathTemplate": "/todos/{id}",
-  //  //  "DownstreamScheme": "https",
-  //  //  "DownstreamHostAndPorts": [
-  //  //    {
-  //  //      "Host": "jsonplaceholder.typicode.com",
-  //  //      "Port": 443
-  //  //    }
-  //  //  ],
-  //  //  "UpstreamPathTemplate": "/todos/{id}",
-  //  //  "UpstreamHttpMethod": [ "Get" ]
-  //  //},
-  //  {
-  //    "UpstreamPathTemplate": "/test",
-  //    "DownstreamPathTemplate": "/test",
-  //    "DownstreamScheme": "http",
-  //    "DownstreamHostAndPorts": [
-  //      {
-  //        "Host": "localhost",
-  //        "Port": 8124
-  //      }
-  //    ]
-  //  },
-  //  {
-  //    "UpstreamPathTemplate": "/registerws",
-  //    "DownstreamPathTemplate": "/registerws",
-  //    "DownstreamScheme": "http",
-  //    "DownstreamHostAndPorts": [
-  //      {
-  //        "Host": "localhost",
-  //        "Port": 8124
-  //      }
-  //    ]
-  //  },
-  //  {
-  //    "UpstreamPathTemplate": "/topic/chat",
-  //    "DownstreamPathTemplate": "/topic/chat",
-  //    "DownstreamScheme": "ws",
-  //    "DownstreamHostAndPorts": [
-  //      {
-  //        "Host": "localhost",
-  //        "Port": 8124
-  //      }
-  //    ]
-  //  }
-  //],
   "Routes": [
     {
       "DownstreamPathTemplate": "/registerws",
@@ -272,6 +225,18 @@
         }
       ],
       "UpstreamPathTemplate": "/friend/{userId}/accept",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/game",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/game",
       "UpstreamHttpMethod": [ "POST" ]
     }
   ],
