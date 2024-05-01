@@ -1,0 +1,250 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/registerws",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/registerws",
+      "UpstreamScheme": "ws",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/chat/{rest}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/chat/{rest}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/user/{rest}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{rest}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/registerws/info",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/registerws/info",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/swagger-ui/{rest}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "chatservice",
+          "Port": 8124
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger-ui/{rest}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/game-handshake",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-handshake",
+      "UpstreamScheme": "ws",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/game-init",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-init",
+      "UpstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/game-info/{gameCode}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-logic-service",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/game-info/{gameCode}",
+      "UpstreamScheme": "http",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/auth/google",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/google",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/auth/protected",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/protected",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/user/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/search/{email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/request",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/request",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/{userId}/send",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/{userId}/send",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/friend/{userId}/accept",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/friend/{userId}/accept",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/game",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user_data_service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/game",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://gateway:80",
+    "WebSocketOptions": {
+      "KeepAliveInterval": 20,
+      "AllowedOrigins": [ "*" ] // Zmodyfikuj na zgodnie z wymaganiami bezpieczeństwa
+    }
+  }
+}
